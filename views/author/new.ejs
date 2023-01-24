@@ -1,0 +1,7 @@
+<h2>Added New Author</h2>
+<%- include("../partial/errormsg.ejs") %> 
+<form action="/author" method="post">
+    <%- include("./_form_input.ejs")  %> 
+    <a href="/">Cancel</a>
+    <button type="submit">Create</button>
+</form>
