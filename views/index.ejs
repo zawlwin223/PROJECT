@@ -1,1 +1,7 @@
-Middle
+<h2>Recently Added</h2>
+<% books.forEach((book)=>{ %>
+    <% if(book.bookcoverpath!=null){ %>
+        <img src="<%=book.bookcoverpath%>" alt="" width="100px" height="100px">
+    <% } %> 
+    
+<% }) %>

@@ -1,0 +1,31 @@
+<h1>New Book</h1>
+
+<% if(locals.ErrorMessage!=null){%>
+    <h2><%= ErrorMessage %> </h2>
+<%  } %> 
+
+<form action="/book" method="post" enctype='multipart/form-data'>
+<label for="title">Title</label>
+<input type="text" name="title">
+<label for="">Author</label>
+<select name="author" id="">
+    <% author.forEach((val)=>{%>
+        <% if(val.id===book.author){%>
+            <option value="<%=val.id%>" selected><%=val.name%></option> 
+       <% }else{%>
+            <option value="<%=val.id%>" ><%=val.name%></option> 
+     <%  } %> 
+       
+   <% }) %> 
+</select>
+<label for="">Publish Date</label>
+<input type="date" name="publishDate">
+<label for="page_count">Page Count</label>
+<input type="number" name="page_count">
+<label for="book_cover">Cover</label>
+<input type="file" name="file">
+<label for="book_cover">Description</label>
+<textarea name="description"></textarea>
+<a href="/book/new">Cancel</a>
+<button type="submit">Create</button>
+</form>
